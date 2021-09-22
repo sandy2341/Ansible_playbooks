@@ -1,0 +1,14 @@
+---
+- hosts: dev
+  become: yes
+  become_method: sudo
+  tasks:
+  - name: this task to install httpd
+    yum:
+     name: httpd
+     state: latest
+
+  - name: this task to start service
+    service: 
+     name: httpd
+     state: started
